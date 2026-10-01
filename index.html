@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YOUR NAME | Data Analyst Portfolio</title>
+<meta name="description" content="Data analysis, data cleaning, pivot tables and dashboards by YOUR NAME.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f6f7f2; --cell:#ffffff; --line:#d3d9cc; --ink:#1b2820; --muted:#5b6a60;
+  --green:#0e7a4d; --mark:#fff1a8;
+  --display:"Bricolage Grotesque",Georgia,sans-serif; --body:"Figtree",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 1.0625rem/1.6 var(--body)}
+a{color:var(--green)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.wrap{max-width:68rem;margin:0 auto;padding:0 1.25rem}
+
+/* sheet tabs nav */
+nav{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:.25rem;overflow-x:auto;padding-top:.6rem}
+nav a{padding:.45rem 1.1rem;border:1px solid var(--line);border-bottom:0;border-radius:.5rem .5rem 0 0;
+  background:#eceee6;color:var(--muted);text-decoration:none;font-weight:600;font-size:.95rem;white-space:nowrap}
+nav a:hover{background:var(--cell);color:var(--ink)}
+
+/* hero as a spreadsheet */
+.hero{padding:3.5rem 0 3rem;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:100% 3rem,9rem 100%;background-position:0 -1px,-1px 0}
+.formula{display:flex;align-items:center;gap:.75rem;background:var(--cell);border:1px solid var(--line);
+  padding:.4rem .75rem;font:500 .95rem/1.4 ui-monospace,Consolas,monospace;color:var(--muted);max-width:34rem}
+.formula b{color:var(--green);font-style:italic;font-family:Georgia,serif}
+h1{font:800 clamp(2.6rem,8vw,5.5rem)/1 var(--display);letter-spacing:-.03em;margin:1.5rem 0 1rem;
+  background:var(--paper);display:inline;padding:.05em .15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.lead{max-width:36rem;margin:1.6rem 0;font-size:1.2rem;background:var(--paper);padding:.5rem .75rem;border-left:4px solid var(--green)}
+.btns{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.7rem 1.2rem;border:2px solid var(--ink);background:var(--cell);color:var(--ink);
+  font-weight:600;text-decoration:none;border-radius:.25rem}
+.btn:hover{background:var(--mark)}
+.btn.main{background:var(--green);border-color:var(--green);color:#fff}
+.btn.main:hover{background:#0a5f3b;color:#fff}
+
+section{padding:3.5rem 0;border-top:1px solid var(--line)}
+h2{font:700 2rem/1.15 var(--display);letter-spacing:-.02em;margin:0 0 .5rem}
+.sub{color:var(--muted);max-width:40rem;margin:0 0 2rem}
+
+/* projects table */
+.scroll{overflow-x:auto;border:1px solid var(--line);background:var(--cell)}
+table{border-collapse:collapse;width:100%;min-width:52rem}
+th,td{border:1px solid var(--line);padding:.9rem 1rem;text-align:left;vertical-align:top}
+thead th{background:#eceee6;font:700 .95rem var(--body);color:var(--muted)}
+td:first-child{font:700 1.1rem/1.3 var(--display);width:20%}
+.tag{display:inline-block;background:var(--mark);padding:.05rem .45rem;margin:0 .25rem .25rem 0;font-size:.85rem;font-weight:500}
+.found{font-weight:600}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:0;border:1px solid var(--line);background:var(--cell)}
+.skills div{padding:1.25rem;border:1px solid var(--line);margin:-1px 0 0 -1px}
+.skills h3{font:700 1.15rem var(--display);margin:0 0 .4rem}
+.skills p{margin:0;color:var(--muted)}
+
+/* about + contact */
+.two{display:grid;gap:2.5rem;grid-template-columns:1fr}
+@media (min-width:48rem){.two{grid-template-columns:1.3fr 1fr}}
+ul.links{list-style:none;margin:0;padding:0;border:1px solid var(--line);background:var(--cell)}
+ul.links li{border-bottom:1px solid var(--line)}
+ul.links li:last-child{border:0}
+ul.links a{display:flex;justify-content:space-between;padding:.9rem 1rem;text-decoration:none;font-weight:600}
+ul.links a:hover{background:var(--mark)}
+ul.links span{color:var(--muted);font-weight:400}
+footer{padding:2rem 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main">
+  <div class="wrap">
+    <a href="#home">Home</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#about">About</a><a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="wrap">
+    <div class="formula" aria-hidden="true"><b>fx</b> =TURN(messy_data, clear_answers)</div>
+    <h1>YOUR NAME</h1>
+    <p class="lead">Data analyst. I clean messy data, build pivot tables and dashboards, and explain what the numbers mean.</p>
+    <div class="btns">
+      <a class="btn main" href="#projects">See my projects</a>
+      <a class="btn" href="resume.pdf">Download resume</a>
+      <a class="btn" href="#contact">Contact me</a>
+    </div>
+  </div>
+</header>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="sub">Each row is one project: the question, the tools, what I found, and where to see the work.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Project</th><th>Question</th><th>Tools</th><th>What I found</th><th>View</th></tr></thead>
+        <tbody>
+          <tr>
+            <td>Sales dashboard</td>
+            <td>Which regions and products drive revenue?</td>
+            <td><span class="tag">Excel</span><span class="tag">Pivot tables</span><span class="tag">Charts</span></td>
+            <td class="found">Replace with your key result, e.g. "Top 3 products made 62% of revenue."</td>
+            <td><a href="#">Dashboard</a><br><a href="#">Excel file</a></td>
+          </tr>
+          <tr>
+            <td>Data cleaning: customer records</td>
+            <td>Can messy data be made reliable for analysis?</td>
+            <td><span class="tag">Google Sheets</span><span class="tag">Power Query</span></td>
+            <td class="found">Replace with your result, e.g. "Removed 1,200 duplicates and fixed 8 date formats."</td>
+            <td><a href="#">Before / after</a></td>
+          </tr>
+          <tr>
+            <td>Survey analysis</td>
+            <td>What do customers say they want most?</td>
+            <td><span class="tag">SQL</span><span class="tag">Python</span><span class="tag">Charts</span></td>
+            <td class="found">Replace with your finding.</td>
+            <td><a href="#">GitHub repo</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Skills</h2>
+    <p class="sub">What I can do for your data.</p>
+    <div class="skills">
+      <div><h3>Data cleaning</h3><p>Duplicates, missing values, formats, and validation.</p></div>
+      <div><h3>Pivot tables and charts</h3><p>Summaries that answer a question at a glance.</p></div>
+      <div><h3>Data visualization</h3><p>Clear graphs and dashboards in Excel, Sheets, or Power BI.</p></div>
+      <div><h3>Analysis</h3><p>Formulas, SQL queries, and simple statistics.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap two">
+    <div>
+      <h2>About</h2>
+      <p>Write 3 to 4 sentences here: your background, what got you into data, the tools you use, and the kind of role you want.</p>
+      <p>Add your education or certifications in one line.</p>
+    </div>
+    <div id="contact">
+      <h2>Contact</h2>
+      <ul class="links">
+        <li><a href="mailto:you@example.com">Email <span>you@example.com</span></a></li>
+        <li><a href="https://linkedin.com/in/yourname">LinkedIn <span>/in/yourname</span></a></li>
+        <li><a href="https://github.com/yourname">GitHub <span>/yourname</span></a></li>
+        <li><a href="https://kaggle.com/yourname">Kaggle <span>/yourname</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">&copy; 2026 YOUR NAME</div></footer>
+</body>
+</html>
